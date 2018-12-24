@@ -6,7 +6,7 @@ export default (props) => {
   const popularFrameworks = [
     {
       name: "React",
-      votes: 14,
+      votes: 15,
     },
     {
       name: "Vue",
@@ -15,6 +15,10 @@ export default (props) => {
     {
       name: "Angular",
       votes: 9,
+    },
+    {
+      name: "Ember",
+      votes: 4,
     },
   ];
 
