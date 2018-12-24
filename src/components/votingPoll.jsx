@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 
 
-/* Take in:
- *  Return:
- * Purpose:
- */
-
 export default (props) => {
 
   const popularFrameworks = [
