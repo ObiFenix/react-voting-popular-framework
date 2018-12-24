@@ -1,7 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Fab from '@material-ui/core/Fab';
+import Icon from '@material-ui/core/Icon';
+import AddIcon from '@material-ui/icons/Add';
+import { withStyles } from '@material-ui/core/styles';
 
 
-export default (props) => {
+const styles = theme => ({
+  fab: {
+    margin: theme.spacing.unit,
+  },
+  extendedIcon: {
+    marginRight: theme.spacing.unit,
+  },
+});
+
+function VotingPoll(props) {
 
   const popularFrameworks = [
     {
@@ -22,6 +36,8 @@ export default (props) => {
     },
   ];
 
+  const { classes } = props;
+
   const frameworkVote = (nVotes) => (nVotes > 9) ?
     (<h3 className="item-votes"><span>{nVotes}</span></h3>) :
     (<h3 className="item-vote"><span>{nVotes}</span></h3>);
@@ -33,10 +49,21 @@ export default (props) => {
         <div className="fw-grided">
           {frameworkVote(framework.votes)}
           <h3 className="item-name">{framework.name}</h3>
-          <h1 className="item-like"><span>+</span></h1>
+          <h1 className="item-like">
+            <Fab color="white" aria-label="Add" className={classes.fab}>
+              <AddIcon onClick={ e => alert(`You have voted for ${framework.name}`)}/>
+            </Fab>
+          </h1>
         </div>
       )
     }
     </div>
   );
 }
+
+VotingPoll.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+
+export default withStyles(styles)(VotingPoll);
