@@ -1,5 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br>
-This project was deployed with 'Now' @: https://build-1w9veh39a.now.sh/.
+This project was deployed with 'Now' @: https://build-jrzr9nhw7.now.sh.
 
 ## Available Scripts
 

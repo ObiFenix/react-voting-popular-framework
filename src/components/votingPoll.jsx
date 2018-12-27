@@ -16,7 +16,7 @@ class VotingPoll extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      popularFrameworks: [
+      listOfPopularFrameworks: [
         { name: "React",   votes: 15 },
         { name: "Vue",     votes: 12 },
         { name: "Angular", votes: 9  },
@@ -27,26 +27,28 @@ class VotingPoll extends React.Component {
   }
 
   handleVotes(id) {
-    const updatedFrameworks = [...this.state.popularFrameworks];
-    updatedFrameworks[id].votes += 1;
-    this.setState({updatedFrameworks});
+    const updatedList = [...this.state.listOfPopularFrameworks];
+    updatedList[id].votes += 1;
+    this.setState({updatedList});
   }
 
-  frameworkVote = (nVotes) => (nVotes > 9) ?
-    (<h3 className="item-votes"><span>{nVotes}</span></h3>) :
-    (<h3 className="item-vote"><span>{nVotes}</span></h3>);
+  styleCounter = (nVotes) => {
+    if (nVotes > 99) return <h3 className="item-votes-3dig"><span>{nVotes}</span></h3>;
+    if (nVotes < 10) return <h3 className="item-vote"><span>{nVotes}</span></h3>;
+    return (<h3 className="item-votes"><span>{nVotes}</span></h3>);
+  }
 
   render() {
     return (
       <div className="wrapper">
       {
-        this.state.popularFrameworks.map((framework, index) =>
+        this.state.listOfPopularFrameworks.map((framework, index) =>
           <div className="fw-grided">
-            {this.frameworkVote(framework.votes)}
+            {this.styleCounter(framework.votes)}
             <h3 className="item-name">{framework.name}</h3>
             <h1 className="item-like">
               <Fab color="white" aria-label="Add" className={this.props.fab}>
-                <AddIcon onClick={ () => this.handleVotes(index) } />
+                <AddIcon className="counter" onClick={ () => this.handleVotes(index) } />
               </Fab>
             </h1>
           </div>

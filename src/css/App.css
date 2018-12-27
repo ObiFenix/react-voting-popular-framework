@@ -3,11 +3,17 @@
   background-color: white;
 }
 
-.item-votes span {
-  padding: 1.2rem;
+.item-votes-3dig span {
+  font-size: 2rem;
   border: 2px solid;
   border-radius: 5rem;
-  padding-left: 1.9rem;
+  padding: 1.8rem 1.2rem 1.7rem 1.7rem;
+}
+
+.item-votes span {
+  padding: 1.2rem 1.5rem;
+  border: 2px solid;
+  border-radius: 5rem;
 }
 
 .item-vote span {
@@ -23,7 +29,8 @@
 
 .item-name,
 .item-votes,
-.item-vote {
+.item-vote,
+.item-votes-3dig {
   font-family: 'Fredoka One', cursive !important;
 }
 
@@ -49,8 +56,8 @@
   color: blue;
 }
 
-.MuiSvgIcon-root-16 {
-  color: green;
+.counter {
+  color: green !important;
   font-size: 4rem !important;
   font-weight: bolder !important;
 }
