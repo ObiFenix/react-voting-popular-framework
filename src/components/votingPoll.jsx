@@ -33,9 +33,9 @@ class VotingPoll extends React.Component {
   }
 
   styleCounter = (nVotes) => {
-    if (nVotes > 99) return <h3 className="item-votes-3dig"><span>{nVotes}</span></h3>;
-    if (nVotes < 10) return <h3 className="item-vote"><span>{nVotes}</span></h3>;
-    return (<h3 className="item-votes"><span>{nVotes}</span></h3>);
+    if (nVotes > 99) return <h2 className="item-votes _3dig"><span>{nVotes}</span></h2>;
+    if (nVotes < 10) return <h2 className="item-votes _1dig"><span>{nVotes}</span></h2>;
+    return (<h2 className="item-votes _2dig"><span>{nVotes}</span></h2>);
   }
 
   render() {
@@ -43,9 +43,9 @@ class VotingPoll extends React.Component {
       <div className="wrapper">
       {
         this.state.listOfPopularFrameworks.map((framework, index) =>
-          <div className="fw-grided">
+          <div className="flexed">
             {this.styleCounter(framework.votes)}
-            <h3 className="item-name">{framework.name}</h3>
+            <h2 className="item-name">{framework.name}</h2>
             <h1 className="item-like">
               <Fab color="white" aria-label="Add" className={this.props.fab}>
                 <AddIcon className="counter" onClick={ () => this.handleVotes(index) } />

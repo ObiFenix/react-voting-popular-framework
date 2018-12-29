@@ -22,6 +22,7 @@ class App extends Component {
         </header>
 
         <div className="container">
+          <h1 className="headline">Vote Your JS Library</h1>
           <FrameworkPoll />
         </div>
       </div>

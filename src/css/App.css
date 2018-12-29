@@ -3,23 +3,29 @@
   background-color: white;
 }
 
-.item-votes-3dig span {
-  font-size: 2rem;
-  border: 2px solid;
-  border-radius: 5rem;
-  padding: 1.8rem 1.2rem 1.7rem 1.7rem;
+.container {
+  width: 400px;
+}
+
+.headline {
+  color: cadetblue;
+}
+
+._3dig > span {
+  padding: 1.3rem 1rem !important;
+}
+
+._2dig > span {
+  padding: 1.2rem 1.6rem !important;
+}
+
+._1dig > span {
+  padding: 1.2rem 2.2rem;
 }
 
 .item-votes span {
-  padding: 1.2rem 1.5rem;
   border: 2px solid;
-  border-radius: 5rem;
-}
-
-.item-vote span {
-  padding: 1.2rem;
-  padding-left: 2.9rem;
-  border: 2px solid;
+  text-align: center;
   border-radius: 100%;
 }
 
@@ -36,24 +42,22 @@
 
 .flexed {
   display: flex;
-  background-color: white;
+  padding: 2rem 1rem;
+  border: 3px solid #444;
   justify-content: space-between;
 }
 
 .fw-grided {
   display: grid;
-  padding: 2rem;
+  padding: 2rem 0;
   border: 2px solid;
   align-content: center;
   grid-template-columns: repeat(3, 1fr);
 }
 
-.fw-grided:hover span {
-  border-color: blue;
-}
-
-.fw-grided:hover .item-name {
-  color: blue;
+.flexed:hover .item-votes>span {
+  color: azure;
+  background-color: cadetblue;
 }
 
 .counter {
@@ -106,5 +110,12 @@ button {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (width: 600px) {
+  .container {
+    width: fit-content !important;
+    margin: 0;
   }
 }
